@@ -2,8 +2,8 @@ base_url = "https://soutjt14.github.io/"
 compile_sass = true
 title = "soutjt14 Pages"
 description = "A robust, elegant website, maybe?"
-generate_feed = true
-theme = "after-dark"
+generate_feed = false
+theme = "zola-just-the-docs"
 
 taxonomies = [
     {name = "categories", feed = true},
@@ -12,9 +12,3 @@ taxonomies = [
 
 [extra]
 author = "Jeremiah"
-after_dark_menu = [
-    {url = "$BASE_URL", name = "Home"},
-    {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
-]
-after_dark_title = "My postless blog"

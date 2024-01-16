@@ -1,0 +1,23 @@
+title = "Zola Just The Docs"
+default_language = "en"
+# The URL the site will be built for
+base_url = "https://zola-just-the-docs.now.sh/"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+insert_anchor_links = true
+
+[extra]
+footer = "Copyright &copy; 2020 Jake Swenson. Distributed by an <a href=\"https://github.com/jakeswenson/zola-just-the-docs/tree/master/LICENSE\">MIT license.</a>"
+links = [
+  { title = 'GitHub', url = 'https://github.com/jakeswenson/zola-just-the-docs/' },
+  { title = 'Demo', url = 'https://zola-jtd-demo.jakeswenson.now.sh/' }
+]

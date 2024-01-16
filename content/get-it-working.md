@@ -37,11 +37,13 @@ I was trying to use the `after-dark` theme. Now I'm using `just-the-docs`.
 serving a page as the root...page? on a static site is a zola no-no. Or maybe
 I'm doing something dumb elsewhere that's telling zola to expect a section as
 the root page.
-- Early on I had errors where zola complained about an empty templates
-directory. It's unclear if I could have gotten around this by removing the
-templates directory entirely, but I went the route of adding a `file.txt` to
-the directory. Well, it's not a template by any stretch of the imagination. But
-zola is happy.
+- I noticed that the menu links weren't rendering correctly. I dug into the
+`just-the-docs` templates and noticed that the `href` being rendered didn't
+have the base URL, just the page name. Rather than figure out the correct zola
+thing to do, I copied the template macro into my own project and re-worked the
+[nav function](https://github.com/soutjt14/soutjt14.github.io/blob/main/templates/macros/nav.html#L24)
+to use an `href` with my pages URL. Now the menu links work, but the `index`
+link at the top of the page seems to make my browser go haywire. Progress?
 
 ## Github Actions
 

@@ -1,0 +1,30 @@
+{% extends "just-the-docs/templates/macros/nav.html" %}
+{% macro nav_node(node) -%}
+  {#
+<!--
+  state = {{ nav::if_is_active_page(node=node,content=' active') }}
+  path = {{node.path | safe }} - {{ node.relative_path | safe }}
+  current_path = {{ current_path | default(value="") | safe }}
+  {% if paged.ancestors or section.ancestors %}
+  ancestors = {{ page.ancestors | default(value=section.ancestors) | json_encode |safe }}
+  {% endif %}
+-->
+ #}
+<li class="navigation-list-item{{ nav::if_is_active_page(node=node,content=' active') }}">
+    <a href="https://soutjt14.github.io{{ node.path | safe }}" class="navigation-list-link{{ nav::if_is_active_page(node=node,content=' active') }}">{{ node.title }}</a>
+    {%- if node.subsections or node.pages -%}
+    <ul class="navigation-list-child-list ">
+        {%- if node.subsections -%}
+        {% for child_section in node.subsections -%}
+        {{ nav::nav_node(node=get_section(path=child_section)) -}}
+        {% endfor -%}
+        {% endif -%}
+        {% if node.pages -%}
+        {% for child_page in node.pages -%}
+        {{ nav::nav_node(node=child_page) -}}
+        {% endfor -%}
+        {% endif -%}
+    </ul>
+    {% endif -%}
+</li>
+{%- endmacro nav_node %}

@@ -52,7 +52,7 @@ to the project. Github Actions can be configured with yaml files in a project's
 [.github/workflows](https://github.com/soutjt14/soutjt14.github.io/tree/main/.github/workflows)
 directory. My workflow looks like this:
 
-```
+```yaml
 # On every push this script is executed
 on: push
 name: zola-build-and-deploy

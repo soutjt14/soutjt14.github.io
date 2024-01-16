@@ -12,7 +12,7 @@ from Jekyll.
 If you can see this, and there's no front matter inside `+++`s at the top, then
 I believe we can claim success.
 
-This is a link to my [test page](testpage), not `testpage.md` like it was
+This is a link to my [test page](@/testpage.md), not `testpage.md` like it was
 before.
 
-These are the steps I took to [get the site working](get-it-working).
+These are the steps I took to [get the site working](@/get-it-working.md).

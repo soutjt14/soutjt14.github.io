@@ -1,4 +1,8 @@
-﻿# Welcome
+﻿+++
+title = "Index"
++++
+
+# Welcome
 
 This is my test of zola.
 

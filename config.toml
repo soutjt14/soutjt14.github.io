@@ -3,7 +3,7 @@ compile_sass = true
 title = "soutjt14 Pages"
 description = "A robust, elegant website, maybe?"
 generate_feed = false
-theme = "zola-just-the-docs"
+theme = "just-the-docs"
 
 taxonomies = [
     {name = "categories", feed = true},

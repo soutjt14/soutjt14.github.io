@@ -1,0 +1,15 @@
+base_url = "https://soutjt14.github.io/"
+compile_sass = true
+title = "soutjt14 Pages"
+description = "A robust, elegant website, maybe?"
+generate_feeds = false
+#highlight_code = true
+theme = "just-the-docs"
+
+taxonomies = [
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
+[extra]
+author = "Jeremiah"

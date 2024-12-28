@@ -1,0 +1,4 @@
+{% set image = resize_image(path=path, width=width, height=height, op=op) %}
+<a href="#" title={{ title | safe }} >
+    <img src="{{ image.url }}" />
+</a>

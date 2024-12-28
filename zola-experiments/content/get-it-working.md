@@ -1,5 +1,6 @@
 +++
-title = "Get (got?) It Working"
+title = "How To Pages"
+paginate_by = 4
 +++
 
 # How the site works
@@ -12,31 +13,31 @@ To have a successful zola build, I added the standard necessary directories:
 - templates
 - themes
 
-Zola projects can also have `static` and `sass` directories, but I didn't try
-creating anything that would go in one of those, so my project doesn't have
-them.
+For my Christmas card, I also added a `static` directory to hold some images
+that `zola` integrates into the webpages.
 
-My development environment leaves something to be desired. I just have a
-Windows laptop to play with, so I didn't try to get access to `zola` locally.
-Oh well, I'll just push lots of bad commits and learn on-the-fly in CI. (And
-[bad CI](https://github.com/soutjt14/soutjt14.github.io/commits/main/) is
-exactly what I got.)
+Zola projects can also have a `sass` directory, but I didn't attempt to create
+one of those since the theme I'm using provides reasonable defaults.
 
-Something else to be desired: I don't have the ability to run CLI git. Sure, I
-could probably figure this out if I put in epsilon effort. But I didn't. So my
-only way to get content from other projects is to copy-paste themes into my own
-themes directory and run commits with Visual Studio. No submodules for me.
-(Worth noting that I could have also moved the git clone step for the themes
-into my CI process, but as you'll see in the next section, I'm using pre-built
-CI steps and didn't try too hard to make anything myself.)
+I do development on my Windows laptop. I downloaded zola with `winget` following
+the `getzola.org` installation
+[instructions](https://www.getzola.org/documentation/getting-started/installation/#windows).
+Then in a terminal I have `zola serve` running, which rebuilds the site as I
+make changes to the source code, letting me see how the site looks in my browser
+locally.
+
+I use Visual Studio as my IDE. Its git interactions leave a bit to be desired
+(more likely I juse use it badly), so I also installed CLI git to let myself do
+things like `git mv <file> <file>` without breaking the git history tracking.
+
+For site theming, I hardcoded the `just-the-docs` theming into my `themes`
+directory. I've made a few edits to it, including font and font size tweaks.
 
 Some notes about the files I added:
 - My config.toml is pretty basic, but might still have some artifacts from when
 I was trying to use the `after-dark` theme. Now I'm using `just-the-docs`.
-- I couldn't get zola to build with `index.md` in my content directory. Maybe
-serving a page as the root...page? on a static site is a zola no-no. Or maybe
-I'm doing something dumb elsewhere that's telling zola to expect a section as
-the root page.
+- I couldn't get zola to build with `index.md` in my content directory, but
+  `_index.md` works. Maybe this is just how `zola` wants it to be.
 - I noticed that the menu links weren't rendering correctly. I dug into the
 `just-the-docs` templates and noticed that the `href` being rendered didn't
 have the base URL, just the page name. Rather than figure out the correct zola
@@ -44,6 +45,9 @@ thing to do, I copied the template macro into my own project and re-worked the
 [nav function](https://github.com/soutjt14/soutjt14.github.io/blob/main/templates/macros/nav.html#L24)
 to use an `href` with my pages URL. Now the menu links work, but the `index`
 link at the top of the page seems to make my browser go haywire. Progress?
+  - Recently I noticed this tweak I made means when I'm serving the site locally
+    I can't use the nav bar links to get around, since they have the github
+    pages URL hardcoded.
 
 ## Github Actions
 

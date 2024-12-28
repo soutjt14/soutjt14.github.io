@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>How To Pages - soutjt14 Pages</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/just-the-docs.css">
+
+  <script type="text/javascript" src="/search_index.en.js"></script>
+  <script type="text/javascript" src="/elasticlunr.min.js"></script>
+  <script type="text/javascript" src="/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="link" viewBox="0 0 16 16">
+    <title>Link</title>
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+<div class="page-wrap">
+  <div class="side-bar">
+    <div class="site-header">
+      <a href="https:&#x2F;&#x2F;soutjt14.github.io&#x2F;" class="site-title lh-tight">soutjt14 Pages</a>
+      <button class="menu-button fs-3 js-main-nav-trigger" data-text-toggle="Hide" type="button">Menu</button>
+    </div>
+
+    <div class="navigation main-nav js-main-nav">
+  <nav role="navigation" aria-label="Main navigation">
+    <ul class="navigation-list">
+        
+<li class="navigation-list-item">
+    <a href="https://soutjt14.github.io/2024-christmas-card/" class="navigation-list-link">Christmas Card</a></li>
+<li class="navigation-list-item active">
+    <a href="https://soutjt14.github.io/get-it-working/" class="navigation-list-link active">How To Pages</a></li>
+<li class="navigation-list-item">
+    <a href="https://soutjt14.github.io/2024-theme-parks/" class="navigation-list-link">Theme Parks</a></li>
+<li class="navigation-list-item">
+    <a href="https://soutjt14.github.io/2024-running/" class="navigation-list-link">Running</a></li></ul>
+</nav>
+</div>
+    <footer class="site-footer">
+      <p class="text-small text-grey-dk-000 mb-4">This site uses <a href="https://github.com/jakeswenson/zola-just-the-docs">Just the Docs</a>, a
+        documentation theme for Zola.</p>
+    </footer>
+  </div>
+  <div class="main-content-wrap js-main-content" tabindex="0">
+    <div class="main-content">
+      <div class="page-header js-page-header">
+      </div>
+      <div class="page">
+        
+  <nav class="breadcrumb-nav">
+    <ol class="breadcrumb-nav-list">
+        <li class="breadcrumb-nav-list-item"><a href="//">Index</a></li>
+        <li class="breadcrumb-nav-list-item"><span>How To Pages</span></li>
+    </ol>
+</nav>
+  <div id="main-content" class="page-content" role="main"><h1 id="how-the-site-works">How the site works</h1>
+<p>Everything is hosted on my personal
+<a href="https://github.com/soutjt14/soutjt14.github.io">github</a>.</p>
+<p>To have a successful zola build, I added the standard necessary directories:</p>
+<ul>
+<li>content</li>
+<li>templates</li>
+<li>themes</li>
+</ul>
+<p>For my Christmas card, I also added a <code>static</code> directory to hold some images
+that <code>zola</code> integrates into the webpages.</p>
+<p>Zola projects can also have a <code>sass</code> directory, but I didn't attempt to create
+one of those since the theme I'm using provides reasonable defaults.</p>
+<p>I do development on my Windows laptop. I downloaded zola with <code>winget</code> following
+the <code>getzola.org</code> installation
+<a href="https://www.getzola.org/documentation/getting-started/installation/#windows">instructions</a>.
+Then in a terminal I have <code>zola serve</code> running, which rebuilds the site as I
+make changes to the source code, letting me see how the site looks in my browser
+locally.</p>
+<p>I use Visual Studio as my IDE. Its git interactions leave a bit to be desired
+(more likely I juse use it badly), so I also installed CLI git to let myself do
+things like <code>git mv &lt;file&gt; &lt;file&gt;</code> without breaking the git history tracking.</p>
+<p>For site theming, I hardcoded the <code>just-the-docs</code> theming into my <code>themes</code>
+directory. I've made a few edits to it, including font and font size tweaks.</p>
+<p>Some notes about the files I added:</p>
+<ul>
+<li>My config.toml is pretty basic, but might still have some artifacts from when
+I was trying to use the <code>after-dark</code> theme. Now I'm using <code>just-the-docs</code>.</li>
+<li>I couldn't get zola to build with <code>index.md</code> in my content directory, but
+<code>_index.md</code> works. Maybe this is just how <code>zola</code> wants it to be.</li>
+<li>I noticed that the menu links weren't rendering correctly. I dug into the
+<code>just-the-docs</code> templates and noticed that the <code>href</code> being rendered didn't
+have the base URL, just the page name. Rather than figure out the correct zola
+thing to do, I copied the template macro into my own project and re-worked the
+<a href="https://github.com/soutjt14/soutjt14.github.io/blob/main/templates/macros/nav.html#L24">nav function</a>
+to use an <code>href</code> with my pages URL. Now the menu links work, but the <code>index</code>
+link at the top of the page seems to make my browser go haywire. Progress?
+<ul>
+<li>Recently I noticed this tweak I made means when I'm serving the site locally
+I can't use the nav bar links to get around, since they have the github
+pages URL hardcoded.</li>
+</ul>
+</li>
+</ul>
+<h2 id="github-actions">Github Actions</h2>
+<p>To get zola builds in CI, I followed the instructions
+<a href="https://www.getzola.org/documentation/deployment/github-pages/">here</a> to
+configure my github actions, i.e., the workflow(s) that run every time I push
+to the project. Github Actions can be configured with yaml files in a project's
+<a href="https://github.com/soutjt14/soutjt14.github.io/tree/main/.github/workflows">.github/workflows</a>
+directory. My workflow looks like this:</p>
+<pre data-lang="yaml" class="language-yaml "><code class="language-yaml" data-lang="yaml"># On every push this script is executed
+on: push
+name: zola-build-and-deploy
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.ref == &#x27;refs&#x2F;heads&#x2F;main&#x27;
+    steps:
+      - name: checkout
+        uses: actions&#x2F;checkout@v4
+      - name: build_and_deploy
+        uses: shalzz&#x2F;zola-deploy-action@v0.18.0
+        env:
+          # Target branch
+          PAGES_BRANCH: gh-pages
+          # Provide personal access token
+          #TOKEN: ${{ secrets.TOKEN }}
+          # Or if publishing to the same repo, use the automatic token
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+</code></pre>
+<p>This effects the build in a series of steps:</p>
+<ul>
+<li>First <code>actions/checkout</code> pulls a new copy of my project's main branch.</li>
+<li>Then <code>shalzz/zola-deploy-action</code> does a few things:
+<ul>
+<li>It runs <code>zola build</code>, which creates the html pages you're reading right now.</li>
+<li>It <code>git push</code>es the created website to my project's <code>gh-pages</code> branch.</li>
+</ul>
+</li>
+</ul>
+<p>Really what's going on is these two <code>steps</code> are running some <code>docker run</code>
+commands with a bunch of env variables set to use my project. The source code
+for all this is hosted publicly in github, so I poked around in the deploy action's
+<a href="https://github.com/shalzz/zola-deploy-action/blob/master/entrypoint.sh">entrypoint</a>
+at various points to help myself debug problems I encountered.</p>
+<p>After the above workflow runs, I still don't have pages - nothing has been
+published yet. So the last step is to configure the project to build pages off
+of the <code>gh-pages</code> branch. This is extra nice because the pages job is watching
+the branch my workflow is pushing to, so there's built-in dependency without
+needing to configure anything. If the zola build fails, <code>gh-pages</code> doesn't
+update and the pages job never runs.</p>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

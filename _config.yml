@@ -1,0 +1,13 @@
+title: "Jeremiah's github"
+description: Some gitops fiddling, some things to share
+remote_theme: carlosperate/jekyll-theme-rtd
+
+# Theme settings:
+site_author: Jeremiah Southwick
+repo_url: "https://github.com/soutjt14/soutjt14.github.io"
+edit_on_github: true
+github_docs_folder: true
+sticky_navigation: true
+prev_next_buttons_location: bottom
+search_enabled: true
+hljs_style: github-gist

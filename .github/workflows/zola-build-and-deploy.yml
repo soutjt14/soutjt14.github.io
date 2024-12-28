@@ -11,8 +11,8 @@ jobs:
       - name: build_and_deploy
         uses: shalzz/zola-deploy-action@v0.18.0
         env:
-          # Target direcroty
-          BUILD_DIR: zola-experiments
+          ## Target direcroty
+          #BUILD_DIR: zola-experiments
           # Target branch
           PAGES_BRANCH: gh-pages
           # Provide personal access token
